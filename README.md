@@ -2,4 +2,4 @@
 
 - 2A maths @ uwaterloo
 - learning ux, python
-- claude abuser
+- 3+ years of experience in abusing claude
