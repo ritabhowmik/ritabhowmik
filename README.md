@@ -1,7 +1,7 @@
-## Hi there 👋
+## .✦ ݁˖    
 
-- 🔭 I’m currently working on research
-- 🌱 I’m currently learning python / sql
-- 📫 How to reach me: linkedin
-- 😄 Pronouns: she/her
-- ⚡ Fun fact: i like miencraft
+rita bhowmik 
+
+- 2A maths @ uwaterloo
+- learning ux, python
+- i like minecraft
