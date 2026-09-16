@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rita Bhowmik, portfolio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%237E1220'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23FBF9F5' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.184.0/build/three.module.js"
+  },
+  "integrity": {
+    "https://unpkg.com/three@0.184.0/build/three.module.js": "sha384-8FCZ1eVO6it4+pbec2aDtnTrwjWXZLJRC+MAGCIPDgsYnUrl/E0A2YlF8ioMKI/J",
+    "https://unpkg.com/three@0.184.0/build/three.core.js": "sha384-dw2ooPewaEIrAgl6oFDBmmBWCE9oW9LxRGcfwZ0hLvEprzo202wXl7vCYHRlSnOT"
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FBF9F5; color: #1B1A16; -webkit-font-smoothing: antialiased; }
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(680px 520px at 8% -6%, rgba(178,55,20,0.22), transparent 62%),
+      radial-gradient(560px 480px at 104% 18%, rgba(212,130,60,0.24), transparent 68%),
+      radial-gradient(600px 500px at 50% 115%, rgba(178,55,20,0.14), transparent 62%);
+  }
+  * { box-sizing: border-box; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #3B4A63; }
+  ::selection { background: #E7E2D6; }
+  @keyframes draw { from { stroke-dashoffset: 2600; } to { stroke-dashoffset: 0; } }
+  @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+</style>
+</helmet>
+<div style="font-family: 'EB Garamond', Georgia, serif; font-weight: 300; font-size: 16px; line-height: 1.72; max-width: 100%; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(251,249,245,0.88); backdrop-filter: blur(8px); border-bottom: 1px solid #E4DED2;">
+    <div style="max-width: 960px; margin: 0 auto; padding: 18px 28px; display: flex; align-items: baseline; justify-content: space-between; gap: 24px;">
+      <a href="#top" style="font-family: 'Cormorant', Georgia, serif; font-size: 20px; letter-spacing: 0.005em;">Rita&nbsp;Bhowmik</a>
+      <nav style="display: flex; flex-wrap: wrap; gap: 20px; font-family: 'Cormorant', Georgia, serif; font-size: 9.5px; letter-spacing: 0.16em; text-transform: lowercase; color: #6E6A5F;">
+        <a href="#about" data-nav="about" style="padding-bottom: 2px; border-bottom: 1px solid transparent;">about</a>
+        <a href="#experience" data-nav="experience" style="padding-bottom: 2px; border-bottom: 1px solid transparent;">experience</a>
+        <a href="#credentials" data-nav="credentials" style="padding-bottom: 2px; border-bottom: 1px solid transparent;">credentials</a>
+        <a href="Beyond.html" style="padding-bottom: 2px; border-bottom: 1px solid transparent;" style-hover="color: #3B4A63;">beyond&nbsp;↗</a>
+        <a href="mailto:r2bhowmi@uwaterloo.ca" style="padding-bottom: 2px; border-bottom: 1px solid transparent;" style-hover="color: #3B4A63;">contact</a>
+      </nav>
+    </div>
+    <div id="progress" style="height: 1px; width: 0%; background: #3B4A63; transition: width 120ms linear;"></div>
+  </header>
+
+  <div id="numeral" style="position: fixed; left: max(20px, calc(50% - 556px)); top: 50%; transform: translateY(-50%); font-family: 'Cormorant', Georgia, serif; font-size: 92px; line-height: 1; color: #EBE5D7; letter-spacing: 0.02em; pointer-events: none; z-index: 1; opacity: 0; transition: opacity 500ms ease, color 500ms ease;">i</div>
+
+  <main id="top" style="max-width: 960px; margin: 0 auto; padding: 0 28px 168px; position: relative; z-index: 1;">
+
+    <section style="padding: 140px 0 108px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 84px; align-items: stretch;">
+      <div style="background: transparent; padding: 24px 26px; padding: 34px 36px; display: flex; flex-direction: column; justify-content: center;">
+        <div style="font-family: 'Cormorant', Georgia, serif; font-size: 10.5px; letter-spacing: 0.18em; text-transform: lowercase; color: #A67A5B; margin-bottom: 8px;">{{ greeting }}</div>
+        <div style="font-family: 'Cormorant', Georgia, serif; font-size: 10.5px; letter-spacing: 0.18em; text-transform: lowercase; color: #6E6A5F; margin-bottom: 26px;">mathematical economics · university of waterloo · 2a study term</div>
+        <h1 style="margin: 0; font-family: 'Cormorant', Georgia, serif; font-weight: 400; font-size: clamp(40px, 5.6vw, 70px); line-height: 0.98; letter-spacing: -0.015em; color: #7E1220;">Rita Bhowmik</h1>
+        <p style="margin: 20px 0 0; max-width: 46ch; font-size: 17px; color: #46433B;">statistics, economics and quant modelling. seeking a winter 2027 co-op in finance or policy.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; font-family: 'Cormorant', Georgia, serif; font-size: 11px; letter-spacing: 0.1em; text-transform: lowercase;">
+          <a href="mailto:r2bhowmi@uwaterloo.ca" style="padding: 11px 20px; border: 1px solid #1B1A16; background: #1B1A16; color: #FBF9F5; white-space: nowrap; flex-shrink: 0;" style-hover="background: #3B4A63; border-color: #3B4A63; color: #FBF9F5;">get in touch</a>
+          <a href="ritas_resume.pdf" download="" style="padding: 11px 20px; border: 1px solid #1B1A16; background: transparent; color: #1B1A16; white-space: nowrap; flex-shrink: 0;" style-hover="border-color: #3B4A63; color: #3B4A63;">resume ↓</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="position: relative; width: 100%; flex: 1; min-height: 300px; background: #F1EDE4; border: 10px solid #FBF9F5; outline: 1px solid #1B1A16; box-shadow: 0 12px 28px rgba(27,26,22,0.18);">
+          <img src="images/portrait.jpg" alt="Rita Bhowmik" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"/>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div id="globe-3d" style="width: 56px; height: 56px; flex-shrink: 0; overflow: visible;"></div>
+          <div style="font-family: 'Cormorant', Georgia, serif; font-size: 10px; letter-spacing: 0.12em; text-transform: lowercase; color: #8B8578;">greater toronto area, canada</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px;">
+      <div style="background: transparent; padding: 24px 26px; padding: 20px 22px;">
+        <div style="font-family: 'Cormorant', Georgia, serif; font-size: 9.5px; letter-spacing: 0.18em; text-transform: lowercase; color: #8B8578; margin-bottom: 8px;">right now, i am probably</div>
+        <div id="right-now-label" style="color: #46433B; transition: opacity 300ms ease;">{{ rightNow }}</div>
+      </div>
+      <div style="background: transparent; padding: 24px 26px; padding: 20px 22px;">
+        <div style="font-family: 'Cormorant', Georgia, serif; font-size: 9.5px; letter-spacing: 0.18em; text-transform: lowercase; color: #8B8578; margin-bottom: 8px;">research</div>
+        <div style="color: #46433B;">undergraduate researcher, combinatorics &amp; optimization, women in math drp.</div>
+      </div>
+      <div style="background: transparent; padding: 24px 26px; padding: 20px 22px;">
+        <div style="font-family: 'Cormorant', Georgia, serif; font-size: 9.5px; letter-spacing: 0.18em; text-transform: lowercase; color: #8B8578; margin-bottom: 8px;">also</div>
+        <div style="color: #46433B;">organizing logistics and outreach for a mini-hackathon at waterloo tech week.</div>
+      </div>
+    </section>
+
+    <section id="about" style="padding: 140px 0 0;">
+      <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid #1B1A16;">
+        <span style="font-family: 'Cormorant', Georgia, serif; font-size: 26px; line-height: 1; letter-spacing: 0.02em; color: #DED7C7; font-family: 'Cormorant', Georgia, serif;">i</span>
+        <h2 style="margin: 0; font-weight: 400; font-size: 11.5px; font-family: 'Cormorant', Georgia, serif; letter-spacing: 0.18em; text-transform: lowercase;">about</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 72px; padding-top: 52px;">
+        <div style="background: transparent; padding: 24px 26px;">
+          <p style="margin: 0 0 18px; font-family: 'Cormorant', Georgia, serif; font-size: 21px; line-height: 1.34; color: #1B1A16;">second-year math student at waterloo, focused on statistics and economics — drawn to financial analysis and quant modelling.</p>
+          <p style="margin: 0 0 18px; color: #46433B;">just finished my first co-op at mespere lifesciences; now on my 2a term, continuing ml research at a facial-algorithms startup. next co-op: where math meets business — quant analysis, banking or policy.</p>
+          <p style="margin: 0; color: #46433B;">outside work: reading, lifting, outdoors. ex-competitive swimmer and ontario-certified lifeguard, four-plus years in.</p>
+        </div>
+        <div style="background: transparent; padding: 24px 26px;">
+          <div style="font-family: 'Cormorant', Georgia, serif; font-size: 9.5px; letter-spacing: 0.18em; text-transform: lowercase; color: #8B8578; margin-bottom: 14px;">focus areas</div>
+          <div style="display: flex; flex-direction: column; gap: 0;">
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E4DED2;"><span>quantitative &amp; financial analysis</span><span style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; color: #8B8578;">01</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E4DED2;"><span>statistics &amp; econometrics</span><span style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; color: #8B8578;">02</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E4DED2;"><span>economic policy &amp; regulation</span><span style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; color: #8B8578;">03</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E4DED2;"><span>optimization &amp; graph theory</span><span style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; color: #8B8578;">04</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0;"><span>market &amp; industry research</span><span style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; color: #8B8578;">05</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" style="padding: 140px 0 0;">
+      <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid #1B1A16;">
+        <span style="font-family: 'Cormorant', Georgia, serif; font-size: 26px; line-height: 1; letter-spacing: 0.02em; color: #DED7C7; font-family: 'Cormorant', Georgia, serif;">ii</span>
+        <h2 style="margin: 0; font-weight: 400; font-size: 11.5px; font-family: 'Cormorant', Georgia, serif; letter-spacing: 0.18em; text-transform: lowercase;">experience</h2>
+      </div>
+
+      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 44px; padding: 56px 0; border-bottom: 1px solid #E4DED2;">
+        <div style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; letter-spacing: 0.08em; color: #8B8578; line-height: 1.9;">fall 2026<br>waterloo, on</div>
+        <div style="background: transparent; padding: 24px 26px;">
+          <h3 style="margin: 0 0 4px; font-family: 'Cormorant', Georgia, serif; font-weight: 600; font-size: 23px; letter-spacing: -0.005em;">undergraduate researcher</h3>
+          <div style="font-style: italic; color: #6E6A5F; margin-bottom: 12px;">combinatorics &amp; optimization, university of waterloo, women in math drp</div>
+          <p style="margin: 0 0 14px; color: #46433B;">selected for waterloo's women in math directed reading program. researching colouring of c-closed graphs with phd students taite lagrange and gabriela bourla.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'Cormorant', Georgia, serif; font-size: 10px; letter-spacing: 0.1em; text-transform: lowercase; color: #6E6A5F;">
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">graph theory</span>
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">combinatorics</span>
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">latex</span>
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">research</span>
+          </div>
+        </div>
+        <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: #F1EDE4;">
+          <image-slot id="exp-drp" shape="rect" radius="0" placeholder="research diagram or program photo"></image-slot>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 44px; padding: 56px 0; border-bottom: 1px solid #E4DED2;">
+        <div style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; letter-spacing: 0.08em; color: #8B8578; line-height: 1.9;">fall 2026<br>waterloo, on</div>
+        <div style="background: transparent; padding: 24px 26px;">
+          <h3 style="margin: 0 0 4px; font-family: 'Cormorant', Georgia, serif; font-weight: 600; font-size: 23px; letter-spacing: -0.005em;">campus ambassador</h3>
+          <div style="font-style: italic; color: #6E6A5F; margin-bottom: 12px;">backboard.io, ai company</div>
+          <p style="margin: 0 0 14px; color: #46433B;">selected nationally to represent backboard.io at waterloo — driving adoption, running demos, building community around ai learning tools.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'Cormorant', Georgia, serif; font-size: 10px; letter-spacing: 0.1em; text-transform: lowercase; color: #6E6A5F;">
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">community building</span>
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">brand strategy</span>
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">events</span>
+          </div>
+        </div>
+        <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: #F1EDE4;">
+          <image-slot id="exp-backboard" shape="rect" radius="0" placeholder="workshop or event photo"></image-slot>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 44px; padding: 56px 0; border-bottom: 1px solid #E4DED2;">
+        <div style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; letter-spacing: 0.08em; color: #8B8578; line-height: 1.9;">jun 2026 to now<br>london, on</div>
+        <div style="background: transparent; padding: 24px 26px;">
+          <h3 style="margin: 0 0 4px; font-family: 'Cormorant', Georgia, serif; font-weight: 600; font-size: 23px; letter-spacing: -0.005em;">ux design &amp; app engineer</h3>
+          <div style="font-style: italic; color: #6E6A5F; margin-bottom: 12px;">urface inc., on-call, venture-backed ($1m pre-seed)</div>
+          <p style="margin: 0 0 14px; color: #46433B;">designed and built ux for medical-grade facial analysis software. worked with dr. reiza rayman on ml facial-recognition pipelines and image data workflows.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'Cormorant', Georgia, serif; font-size: 10px; letter-spacing: 0.1em; text-transform: lowercase; color: #6E6A5F;">
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">python</span>
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">pytorch</span>
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">opencv</span>
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">computer vision</span>
+          </div>
+        </div>
+        <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: #F1EDE4;">
+          <video src="videos/titan-ux-demo.mp4" autoplay muted loop playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+        </div>
+      </article>
+
+      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 44px; padding: 56px 0;">
+        <div style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; letter-spacing: 0.08em; color: #8B8578; line-height: 1.9;">may to aug 2026<br>waterloo, on</div>
+        <div style="background: transparent; padding: 24px 26px;">
+          <h3 style="margin: 0 0 4px; font-family: 'Cormorant', Georgia, serif; font-weight: 600; font-size: 23px; letter-spacing: -0.005em;">engineering intern</h3>
+          <div style="font-style: italic; color: #6E6A5F; margin-bottom: 12px;">mespere lifesciences inc., first co-op term, completed</div>
+          <p style="margin: 0 0 14px; color: #46433B;">supported engineering and business analysis at a medical device company specializing in noninvasive hemodynamic monitoring. contributed to global market research.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'Cormorant', Georgia, serif; font-size: 10px; letter-spacing: 0.1em; text-transform: lowercase; color: #6E6A5F;">
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">business analysis</span>
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">market research</span>
+            <span style="padding: 4px 9px; border: 1px solid #E4DED2;">electronics design</span>
+          </div>
+        </div>
+        <div style="position: relative; width: 100%; aspect-ratio: 4 / 3; background: #F1EDE4;">
+          <image-slot id="exp-mespere" shape="rect" radius="0" placeholder="device or lab photo"></image-slot>
+        </div>
+      </article>
+    </section>
+
+    <section id="credentials" style="padding: 140px 0 0;">
+      <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid #1B1A16;">
+        <span style="font-family: 'Cormorant', Georgia, serif; font-size: 26px; line-height: 1; letter-spacing: 0.02em; color: #DED7C7; font-family: 'Cormorant', Georgia, serif;">iii</span>
+        <h2 style="margin: 0; font-weight: 400; font-size: 11.5px; font-family: 'Cormorant', Georgia, serif; letter-spacing: 0.18em; text-transform: lowercase;">credentials &amp; skills</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 64px; padding-top: 52px;">
+        <div style="background: transparent; padding: 24px 26px;">
+          <div style="font-family: 'Cormorant', Georgia, serif; font-size: 9.5px; letter-spacing: 0.18em; text-transform: lowercase; color: #8B8578; margin-bottom: 14px;">certifications</div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E4DED2;"><span>aws certified ai practitioner</span><span style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; color: #8B8578;">2025</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E4DED2;"><span>ontario certified lifeguard, lss</span><span style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; color: #8B8578;">active</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0;"><span>swim &amp; lifesaving instructor</span><span style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; color: #8B8578;">5+ yrs</span></div>
+        </div>
+        <div style="background: transparent; padding: 24px 26px;">
+          <div style="font-family: 'Cormorant', Georgia, serif; font-size: 9.5px; letter-spacing: 0.18em; text-transform: lowercase; color: #8B8578; margin-bottom: 14px;">technical</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'Cormorant', Georgia, serif; font-size: 10.5px; letter-spacing: 0.08em; color: #46433B;">
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">python</span>
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">sql</span>
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">r</span>
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">excel</span>
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">pandas</span>
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">numpy</span>
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">matplotlib</span>
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">statistics</span>
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">pytorch</span>
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">opencv</span>
+            <span style="padding: 6px 11px; border: 1px solid #E4DED2;">latex</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" style="padding: 140px 0 0;">
+      <div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid #1B1A16;">
+        <span style="font-family: 'Cormorant', Georgia, serif; font-size: 26px; line-height: 1; letter-spacing: 0.02em; color: #DED7C7; font-family: 'Cormorant', Georgia, serif;">iv</span>
+        <h2 style="margin: 0; font-weight: 400; font-size: 11.5px; font-family: 'Cormorant', Georgia, serif; letter-spacing: 0.18em; text-transform: lowercase;">education</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 44px; padding-top: 52px;">
+        <div style="font-family: 'Cormorant', Georgia, serif; font-size: 11px; letter-spacing: 0.08em; color: #8B8578;">2025, 2030</div>
+        <div style="background: transparent; padding: 24px 26px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+            <h3 style="margin: 0; font-family: 'Cormorant', Georgia, serif; font-weight: 600; font-size: 23px; letter-spacing: -0.005em;">university of waterloo</h3>
+            <image-slot id="uw-crest" src="./images/uw-crest.png?v=2" shape="circle" radius="0" fit="cover" placeholder="uw crest" style="width: 26px; height: 26px; opacity: 0.9; flex-shrink: 0; transition: transform 0.6s ease;" style-hover="transform: rotate(360deg);"></image-slot>
+          </div>
+          <div style="font-style: italic; color: #6E6A5F; margin-bottom: 12px;">honours mathematical economics, co-op, 2a term</div>
+          <p style="margin: 0 0 10px; color: #46433B;">coursework: calculus i–iii, linear algebra, computing with python, physics, combinatorics &amp; optimization, statistics, microeconomics.</p>
+          <p style="margin: 0; color: #6E6A5F;">activities: imc prosperity trading competition · farmsa</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-hidden="true" style="padding: 96px 0 0; display: flex; flex-direction: column; align-items: center; gap: 22px;">
+      <div style="overflow: hidden; max-height: 220px; opacity: 0.55;">
+        <pre style="margin: 0; font-family: monospace; font-size: 6px; line-height: 1; color: #C97C8A; white-space: pre; text-align: center;">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⣿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣈⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣴⣤⡀⠀⠀⠀⠀⣭⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢸⡀⠈⠳⣄⠀⠀⠼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢠⠀⠀⠀⢳⠀⠀⠈⠢⡀⠶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠉⢻⠉⢀⠀⠀⢣⠀⠀⠀⠈⢼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠺⠃⠀⠀⠡⠀⠀⠀⣸⠐⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠱⡀⠀⣿⡀⢈⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣀⣹⣾⣿⣷⣏⣀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠉⠉⠉⠉⠙⠛⢻⣿⣶⣿⡟⠛⠋⠉⠉⠉⠉⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠞⠹⣿⢏⠳⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⠀⠢⠀⠀⠀⠰⡧⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡀⢸⠀⠀⠡⡀⠀⠀⠀⠤⣾⠤
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢬⠀⠀⠀⠱⡀⠀⠀⠀⠘⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢄⠀⠀⢣⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠶⠀⠀⠓⢤⣀⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠶⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣛⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢩⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣤⣿⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+      </div>
+      <p style="margin: 0; font-family: 'Cormorant', Georgia, serif; font-style: italic; font-size: 20px; color: #C97C8A; letter-spacing: 0.02em;">end of portfolio</p>
+    </section>
+  </main>
+
+  <footer style="border-top: 1px solid #E4DED2; padding: 28px 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; justify-content: space-between; font-family: 'Cormorant', Georgia, serif; font-size: 10px; letter-spacing: 0.14em; text-transform: lowercase; color: #8B8578;">
+    <span style="display: flex; align-items: center; gap: 8px;"><span id="coin-3d" style="width: 30px; height: 30px; display: inline-block; vertical-align: middle; overflow: visible;"></span>© 2026 Rita Bhowmik</span>
+    <span>toronto · {{ clock }}</span>
+    <span title="↑↑↓↓←→←→" style="font-size: 10px; letter-spacing: 0.08em; text-transform: lowercase; color: #C6597A; font-weight: 700; cursor: help;">pssst.. type the konami code ↑↑↓↓←→←→</span>
+  </footer>
+
+  <sc-if value="{{ showCat }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeCat }}" style="position: fixed; inset: 0; background: rgba(27,26,22,0.9); z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; cursor: pointer;">
+      <pre style="margin: 0; font-family: monospace; font-size: 5px; line-height: 1; color: #F7B9C6; white-space: pre;">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⠖⠋⠓⠋⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣘⠃⠀⠀⠀⠀⠀⠀⢋⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⢸⠅⠀⠀⢻⡄⠀⠀⠀⢹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⣀⡄⣄⣀⠸⣟⣿⠃⢀⡀⠈⠩⢢⣤⠬⠁⢀⣀⣀⠼⠃⢾⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢀⡜⠋⠀⠀⠀⠀⠘⣄⠁⣚⠁⢉⡆⠀⠈⠈⢀⡴⣪⣽⠟⡶⢤⣌⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢾⠀⠤⣤⣄⡀⠀⠀⠀⢦⣇⠀⠙⠁⠀⠀⢀⡽⠚⠉⠀⣐⠌⠀⠘⢸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠹⢂⠀⠀⡻⠓⠀⠀⠀⠸⠅⠀⠀⠀⠀⣠⠞⠀⠀⢀⡖⠁⠀⢿⠀⢀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠉⠉⠁⠀⠀⠀⠀⣨⠁⠀⠀⢀⡾⡍⠀⢀⠶⠋⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⠅⠀⣀⣴⡿⣟⡠⠼⠉⠀⠀⠀⠒⠙⠙⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠋⢀⣀⠋⢏⠄⠧⠁⠦⣤⣀⣰⡶⠒⠲⠠⠛⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⠁⠢⠆⠉⠀⠀⠀⠀⠀⠀⠀⢩⢽⠁⠦⢀⠀⠀⢿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡰⡤⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠷⣆⠈⢋⢄⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠒⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢀⡀⠀⠀⠀⢰⣆⠀⠴⢫⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠌⠀⠁⡯⠀⠀⢬⣱⠀⠸⠴⠑⢠⠀⠀⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⡀⠀⠀⠀⠀⣤⠂⣾⠁⡨⢈⠀⢐⣻⡙⠀⠈⣖⠀⣀⣀⠀⠀⠀⠀⠀⣤⠶⠒⠒⠲⠦⣤⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠥⠀⠀⠀⢀⣾⣦⢿⡁⠀⠨⠡⠀⢸⡇⠹⣄⢰⡋⠘⠯⠉⢷⡀⠀⠀⣾⡇⢀⣄⠀⠀⠀⠈⢳⣶
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⠐⠳⠀⢁⡞⠁⠀⠀⠑⡀⢀⡘⡿⣟⡇⠀⠀⠀⠀⡼⠁⠀⠀⠘⠾⠐⠃⠀⠀⠀⠀⢰⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠄⠀⠀⢀⠀⠀⠀⠰⠂⢉⣶⣧⡀⣠⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⡅⠀⠀⢿⣹⣒⠀⠀⠀⠋⠻⠞⠙⣟⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⢲⠍⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣄⡀⠀⣜⠃⠀⠀⠀⠀⠀⠀⠀⠀⠩⣏⡲⠆⣰⣄⣠⡄⣔⠦⠛⠉⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣙⡶⣀⠀⠀⢀⣤⢤⡄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⡁⠳⣄⠀⠻⠟⠋⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡾⠘⢳⡄⠀⢼⣿⠉⢸⣋⠗⠀⠀⣅⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⠈⠁⠀⠀⠘⣷⣖⠏⠀⠀⠀⢠⣬⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⡤⣤⢤⣤⠞⠙⠲⠤⣤⣴⠜⠀⠀⠀</pre>
+      <p style="margin: 0; font-family: 'Cormorant', Georgia, serif; font-style: italic; font-size: 18px; color: #F7B9C6; letter-spacing: 0.02em;">you found the cat. click anywhere to leave.</p>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { clock: '', rightNowIdx: 0, showCat: false };
+  KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight'];
+  konamiProgress = 0;
+  RIGHT_NOW = ['at the library', 'at the gym', 'playing minecraft / stardew valley', 'watching studio ghibli movies', 'networking / hosting', 'writing'];
+
+  tickClock() {
+    const t = new Date().toLocaleTimeString('en-CA', { timeZone: 'America/Toronto', hour: '2-digit', minute: '2-digit', hour12: false });
+    this.setState({ clock: t + ' est' });
+  }
+
+  greetingText() {
+    const h = Number(new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto', hour: '2-digit', hour12: false }));
+    if (h < 5) return 'browsing at ' + h + ':00, gta time — up late';
+    if (h < 12) return 'browsing this morning, gta time';
+    if (h < 17) return 'browsing this afternoon, gta time';
+    if (h < 21) return 'browsing this evening, gta time';
+    return 'browsing late tonight, gta time';
+  }
+
+  onKeydown = (e) => {
+    if (e.key === this.KONAMI[this.konamiProgress]) {
+      this.konamiProgress++;
+      if (this.konamiProgress === this.KONAMI.length) {
+        this.konamiProgress = 0;
+        this.setState({ showCat: true });
+      }
+    } else {
+      this.konamiProgress = (e.key === this.KONAMI[0]) ? 1 : 0;
+    }
+  };
+
+  closeCat = () => this.setState({ showCat: false });
+
+  onScroll = () => {
+    const bar = document.getElementById('progress');
+    if (!bar) return;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0) + '%';
+  };
+
+  componentDidMount() {
+    this.rightNowTimer = setInterval(() => {
+      const label = document.getElementById('right-now-label');
+      if (label) {
+        label.style.opacity = '0';
+        setTimeout(() => {
+          this.setState((s) => ({ rightNowIdx: (s.rightNowIdx + 1) % this.RIGHT_NOW.length }));
+          label.style.opacity = '1';
+        }, 300);
+      }
+    }, 2600);
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this.io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    this.applyReveal();
+    this.fallback = setTimeout(() => this.revealAll(), 2500);
+    if (this.curveEl) {
+      const len = this.curveEl.getTotalLength();
+      this.curveEl.style.strokeDasharray = len;
+      this.curveEl.style.strokeDashoffset = len;
+      this.curveEl.style.transition = 'stroke-dashoffset 2400ms cubic-bezier(.3,.8,.2,1)';
+      requestAnimationFrame(() => requestAnimationFrame(() => { this.curveEl.style.strokeDashoffset = '0'; }));
+    }
+    this.tickClock();
+    this.clockTimer = setInterval(() => this.tickClock(), 30000);
+    import('./vintage-3d.js').then(({ mountVintage }) => {
+      const g = document.getElementById('globe-3d');
+      if (g) mountVintage(g, 'globe', { tilt: 0.15, speed: 0.01, cameraZ: 2.6 });
+      const c = document.getElementById('coin-3d');
+      if (c) mountVintage(c, 'coin', { tilt: 1.1, speed: 0.05, cameraZ: 1.7 });
+    });
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.applyRail);
+    window.addEventListener('keydown', this.onKeydown);
+    this.onScroll();
+
+    const numerals = { about: 'I', experience: 'II', credentials: 'III', education: 'IV' };
+    const rail = document.getElementById('numeral');
+    this.numeralIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting || !rail) return;
+        const n = numerals[e.target.id];
+        if (!n) return;
+        rail.textContent = n;
+        this.applyRail();
+      });
+    }, { rootMargin: '-30% 0px -55% 0px' });
+    Object.keys(numerals).forEach((id) => { const el = document.getElementById(id); if (el) this.numeralIo.observe(el); });
+
+    const ids = ['about', 'experience', 'credentials'];
+    this.navIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const link = document.querySelector('[data-nav="' + e.target.id + '"]');
+        if (!link) return;
+        const on = e.isIntersecting;
+        link.style.color = on ? '#1B1A16' : '#6E6A5F';
+        link.style.borderBottomColor = on ? '#1B1A16' : 'transparent';
+      });
+    }, { rootMargin: '-12% 0px -70% 0px' });
+    ids.forEach((id) => { const el = document.getElementById(id); if (el) this.navIo.observe(el); });
+  }
+
+  componentDidUpdate() { this.applyReveal(); }
+
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.navIo) this.navIo.disconnect();
+    if (this.numeralIo) this.numeralIo.disconnect();
+    if (this.fallback) clearTimeout(this.fallback);
+    if (this.clockTimer) clearInterval(this.clockTimer);
+    if (this.rightNowTimer) clearInterval(this.rightNowTimer);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.applyRail);
+    window.removeEventListener('keydown', this.onKeydown);
+  }
+
+  revealAll() {
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  }
+
+  applyReveal() {
+    if (!this.io) return;
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      if (el.dataset.revealDone) return;
+      el.dataset.revealDone = '1';
+      el.style.transition = 'opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1)';
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        return;
+      }
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(14px)';
+      this.io.observe(el);
+    });
+  }
+
+  applyRail = () => {
+    const rail = document.getElementById('numeral');
+    if (!rail) return;
+    const wide = window.innerWidth > 1080;
+    rail.style.fontSize = window.innerWidth > 1200 ? '84px' : '56px';
+    rail.style.opacity = wide && rail.textContent ? '1' : '0';
+  };
+
+  buildCurve() {
+    // Placeholder series, replace these values with your real P&L, one per period.
+    const series = [0, 4, 2, 9, 14, 11, 18, 16, 24, 31, 27, 36, 33, 42, 48, 45, 54, 61, 58, 67, 74, 71, 82, 88, 95, 92, 104, 112, 118, 126];
+    const max = Math.max.apply(null, series);
+    const n = series.length - 1;
+    return series
+      .map((v, i) => (i === 0 ? 'M' : 'L') + ((i / n) * 960).toFixed(1) + ' ' + (145 - (v / max) * 130).toFixed(1))
+      .join(' ');
+  }
+
+  renderVals() {
+    return {
+      clock: this.state.clock,
+      greeting: this.greetingText(),
+      rightNow: this.RIGHT_NOW[this.state.rightNowIdx],
+      curveRef: (el) => { this.curveEl = el; },
+      curvePath: this.buildCurve(),
+      showCat: this.state.showCat,
+      closeCat: this.closeCat
+    };
+  }
+}
+</script>
+</body>
+</html>
