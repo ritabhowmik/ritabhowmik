@@ -5,7 +5,4 @@
 - 3+ years of experience in abusing claude
 
 
-
-  ∧,,,∧
-  (  ̳• · • ̳)
-  /    づ♡ 
+‧₊˚✩彡
