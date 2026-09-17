@@ -3,3 +3,16 @@
 - 2A maths @ uwaterloo
 - learning ux, python
 - 3+ years of experience in abusing claude
+
+
+
+               ／＞　 フ
+               | 　_　_| 
+          ／` ミ＿xノ 
+         /　　　　 |
+        /　 ヽ　　 ﾉ
+        │　　|　|　|
+／￣|　　 |　|　|
+(￣ヽ＿_ヽ_)__)
+＼二)
+
